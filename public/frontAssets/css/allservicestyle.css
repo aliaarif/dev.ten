@@ -1,0 +1,393 @@
+/*
+======================
+All Service Style
+======================
+*/
+*{ box-sizing: border-box; }
+ul, li{ margin: 0; padding: 0; }
+
+.all-service {
+    width: 100%;
+    text-align: left;
+    display: block;
+    border: 1px solid #e1e1e1;
+    float: left;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.all-service li{
+	width: 100%;
+	display: block;
+	float: left;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.all-service li.active a{
+	background: #f7871e;
+    color: #fff;
+}
+
+.all-service li:last-child{
+	width: 100%;
+	display: block;
+	float: left;
+	border-bottom: 0px solid #e1e1e1;
+}
+
+.all-service li a {
+    width: 100%;
+    display: block;
+    padding: 7px 15px;
+    color: #484848;
+}
+
+.all-service li a:hover {
+    background: #f7871e;
+    color: #fff;    
+}
+
+/*+++++++++++ right section +++++++++++++*/
+
+.inner-search {
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+    border: 1px solid #ff7e00;
+    padding: 5px;
+    height: 65px;
+}
+
+.search-bx2 {
+    display: inline-block;
+}
+
+.input-search2 {
+    width: 100%;
+    min-width: 341px;
+    background: #fff;
+    height: 52px;
+    padding: 12px 15px 12px 40px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 0px solid #e1e1e1;
+    position: relative;
+}
+
+.btn-submit2 {
+    text-transform: uppercase;
+    color: #fff;
+    padding: 12px 40px 12px 50px;
+    height: 52px;
+    border-radius: 2px;
+    border: 0px;
+    transition: all .35s linear;
+}
+
+.s-icon1 {
+    background: url(../images/s-icon.png) 15px center no-repeat;
+}
+
+.s-icon2 {
+    background: url(../images/loc-icon.png) 15px center no-repeat;
+    border-left: 1px solid #ff7e00;
+}
+
+.s-icon3 {
+    background: #ff7e00 url(../images/s-aero.png) 15px center no-repeat;
+}
+
+
+.right-ul {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+.right-ul li {
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+    padding: 8px;
+    margin: 0px 7px 14px 7px;
+    box-shadow: 0px 0px 5px #f7871e;
+}
+
+.servic-bx {
+	width: 100%;
+    max-width: 254px;
+    border-radius: 3px;    
+}
+
+.service-img {
+    width: 100%;
+    display: block;
+    height: 168px;
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    display: block;
+}
+
+.service-title {
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    color: #ff7e00;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 0px;
+}
+
+.service-dis {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 22px;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+
+
+.service-area {
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    display: block;
+    line-height: 35px;
+}
+
+.service-star {
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    display: block;
+    line-height: 35px;
+    border-top: 1px solid #e1e1e1;
+}
+
+.service-star img {
+    height: 20px;
+    margin-top: 6px;
+    display: block;
+}
+
+.book-now {
+    width: 100%;
+    padding: 8px 0px;
+    display: block;
+    text-align: center;
+    border-top: 1px solid #e1e1e1;
+}
+
+.book-now a {
+    display: inline-block;
+    padding: 6px 30px;
+    background: #ff7e00;
+    color: #fff;
+    border-radius: 3px;
+    transition: all .35s linear;
+}
+
+.book-now a:hover{
+	background: #484848;
+}
+
+.inner-pager {
+    width: 100%;
+    text-align: center;
+    display: block;
+    float: left;
+    padding-top: 50px;
+}
+
+.inner-pager li{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.inner-pager li a {
+    display: block;
+    padding: 6px 8px;
+    background: #ff7e00;
+    color: #fff;
+    min-width: 38px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all .35s linear;
+}
+
+.inner-pager li a:hover{
+	background: #484848;
+}
+
+/*++++++++++++ profile pages ++++++++++++++*/
+.profile-page {
+    width: 100%;
+    display: block;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px #f7871e;
+}
+
+.profile-img {
+    width: 100%;
+    display: block;
+    height:168px;
+    overflow:hidden;    
+}
+
+.profile-img img {
+    width: 100%;    
+}
+
+.profile-title {
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    color: #ff7e00;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 0px;
+}
+
+.about-profile {
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+}
+
+.about-company {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+.about-topsec {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px #f7871e;
+    margin-bottom: 30px;
+    float: left;
+}
+
+.brnad-name {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+}
+
+.brnad-name span{
+	width: 100%;
+	display: block;
+	font-weight: 500;
+}
+
+.brnad-name span img {
+    height: 20px;
+}
+
+.booking-now{
+  text-align: center;
+  display: block;
+}
+
+.booking-now span {    
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 48px;
+    border: 1px solid #f7871e;
+    height: 48px;
+    padding: 0px 30px;
+}
+
+.base-pric {
+    padding: 0px;
+    font-weight: 500;
+    color: #ff7e00;
+    font-size: 20px;
+}
+
+.booking-now span:last-child {
+    border: 0px solid #f7871e;   
+}
+
+.process{
+	display: inline-block;
+    padding: 0px 30px;
+    background: #ff7e00;
+    color: #fff;
+    border-radius: 3px;
+    transition: all .35s linear;
+}
+
+.process:hover{
+	background: #484848;
+}
+
+.about-gallery-section {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+.about-gallery {
+    width: 100%;
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+.about-gallery li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 8px 15px 8px;
+    float: left;
+}
+
+.example-image-link {
+    display: block;
+}
+
+.example-image {
+    width: 100%;
+    max-width: 255px;
+    box-shadow: 0px 0px 5px #ff7e00;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+/*++++++++++++++++ service & profile page ++++++++++++++*/
+@media screen and (max-width: 767px) and (min-width: 0px) {
+	.inner-search{height: auto; border: 0px solid #ff7e00;	}
+	.input-search2{ min-width: 285px; border: 1px solid #ff7e00; }
+	.search-bx2{ margin: 5px 0px; }
+	.right-ul{ text-align: center; }
+	.right-ul li{float: none; text-align: left;}
+	.inner-pager li a{ padding: 3px 4px; }
+}
+
+@media screen and (max-width: 990px) and (min-width: 768px) {
+	.servic-bx{ max-width: 240px; }
+	.input-search2{ min-width:150px; max-width: 184px; }
+}
+
+@media screen and (max-width: 1050px) and (min-width: 991px) {
+	.input-search2{ min-width: 272px; }
+	.servic-bx{ max-width: 208px; }
+	.service-img{ height: 138px; }
+	.service-title { line-height: 20px; height: 48px; overflow: hidden;}
+}

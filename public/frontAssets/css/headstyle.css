@@ -1,0 +1,45 @@
+.header{ 
+  min-height: 250px; 
+  background: #000 url(../images/aboutbg.jpg) no-repeat top center;
+ }
+
+ .head-bg{
+ 	background:#f5f5f5;
+ }
+
+ .paging ul{
+ 	width: 100%;
+ 	display: block;
+ }
+
+  .paging ul li{
+ 	display: inline-block;
+ 	vertical-align: top;
+ 	margin-right: 15px;
+ 	position: relative;
+ }
+
+ .paging ul li a{
+ 	display: block;
+ 	padding: 8px 15px 8px 0px;
+ 	color:#484848;
+ }
+
+.paging ul li a:hover{
+	color: #f7871e;
+}
+
+.paging ul li:after {
+    content: "\f105";
+    font-family: fontawesome;
+    font-size: 18px;
+    color: #484848;
+    margin-right: 6px;
+    top: 8px;
+    right: -12px;
+    position: absolute;
+}
+
+.paging ul li:last-child:after {   
+    display: none;
+}
