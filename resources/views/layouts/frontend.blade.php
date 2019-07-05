@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="{{ asset('frontAssets/css/responsive.css') }}">
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="userid" content="{{ Auth::check() ? Auth::id() : null }}">
+<meta name="userId" content="{{ Auth::check() ? Auth::id() : null }}">
 <!-- Scripts -->
 <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 <!-- Fonts -->

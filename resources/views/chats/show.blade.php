@@ -1,5 +1,3 @@
-
-
 @extends('layouts.frontend')
 @section('content')
 <section class="w-100 head-bg p-tb-25">
@@ -19,7 +17,10 @@
 
 </section>
 <section class="w-100 p-tb-70">
-<meta name="friendsId" content="{{ $friend->id }}">
+<meta name="friendId" content="{{ $friend->id }}">
+<audio id="chatAudio">
+  <source src="{{ asset('sounds/chat-audio.mp3') }}">
+</audio>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">

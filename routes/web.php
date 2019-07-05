@@ -124,6 +124,7 @@ Route::get('/settings/chat-messages', 'MessageController@index')->name('settings
 Route::get('chats', 'ChatController@index')->name('chats.index');
 Route::get('chats/{id}', 'ChatController@show')->name('chats.show');
 Route::post('chats/get-chats/{id}', 'ChatController@getChats');
+Route::post('chats/send-chat', 'ChatController@sendChat');
 
 
 Route::get('filter/{type?}/{location?}/{rate}', function($type = null, $location = null, $rate){

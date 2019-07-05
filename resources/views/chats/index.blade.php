@@ -5,10 +5,10 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<div class="paging">
-					<h1 class="h1-title"><span>Chats</span></h1>                     
+					<h1 class="h1-title"><span>Booked Vendors</span></h1>                     
 					<ul>
 						<li><a href="{{ url('/') }}">Home</a></li>
-						<li><a>Chats</a></li>
+						<li><a>List of my booked vendors</a></li>
 					</ul>
 				</div>
 			</div>
@@ -16,44 +16,28 @@
 	</div>
 
 </section>
-<section class="w-100 p-tb-70">
+<section>
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12">
-				
-
-        
-   
-            <div class="column is-7">
-                <div class="panel">
-                    
-                        <div class="panel-heading">
-                            List of all friends
-                        </div>
-                    
-
-                    
-                    @forelse($friends as $friend)
-                    
-                        <a  href="{{ route('chats.show', $friend->id) }}" class="panel-block">
-							{{ $friend->name }}
-						</a>
-                       
-                    @empty
-                    <div class="panel-block">
-                    You don't have any friend. 
-                    </div>
-                    @endforelse    
-                    
-                    
-                </div>
-            </div>
-     
-
-			</div>
-		</div>
+		<div class="column-is-8 is-offset-2">
+		  @forelse($friends as $friend)
+			<a  href="{{ route('chats.show', $friend->id) }}" class="panel-block" >
+				<div class="card" style="justify-content:space-between;" >
+    				<div class="card-body" >
+						{{ $friend->name }} 
+					</div>
+					<onlineusers v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineUsers" ><onlineusers>
+  				</div>
+				  <br/>
+			</a>
+			@emptY
+			<div class="card">
+    			<div class="card-body">
+					You don't have any friend. 
+				</div>
+  			</div>
+            @endforelse                       
 	</div>
-
+</div>
 </section>
 @endsection
 @push('css')

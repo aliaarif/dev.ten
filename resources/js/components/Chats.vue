@@ -1,6 +1,7 @@
 <style scoped>
     .panel-block {
         flex-direction: column;
+        border: none;
     }
     .chats{
         width: 100%;
@@ -16,7 +17,7 @@
         max-width: 70%;
         box-shadow: 0 0 8px 0px grey;
         padding: 8px;
-        margin-left: 4px;
+        margin: 4px;
     }
     .chats-right{
         float: right;
@@ -40,7 +41,7 @@
     <div class="panel-block">
         <div class="chats" v-if="chats.length != 0">
             <div  v-for="chat in chats" v-bind:key="chat.id" style="overflow:auto">
-                <div class="chats-right" v-if="chat.user_id == userId" >
+                <div class="chats-right" v-if="chat.user_id == userid" >
                     {{ chat.chat }}
                 </div>
 
@@ -49,14 +50,18 @@
                 </div>
             </div>
         </div>
-        <div v-else class="no-message">
+        <div class="no-message" v-else>
             No conversation found.
-        </div>    
+        </div>
+
+        <chat-composer v-bind:chats="chats" v-bind:userid="userid" v-bind:friendid="friendid"></chat-composer>
+          
     </div>
 </template>
 
 <script>
     export default {
-        props: ['chats', 'userid', 'friendid']
+        props: ['chats', 'userid', 'friendid'],
+       
     }
 </script>

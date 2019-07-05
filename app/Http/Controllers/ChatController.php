@@ -124,9 +124,7 @@ class ChatController extends Controller {
 
     public function getChats($id)
     {
-        return $id;
-
-        $chats = Chat::where(function($query) use($id){
+       $chats = Chat::where(function($query) use($id){
             $query->where('user_id', '=', Auth::id())
                   ->where('friend_id', '=', $id);
         })->orWhere(function ($query) use ($id) {
@@ -135,5 +133,18 @@ class ChatController extends Controller {
         })->get();
 
         return $chats;
+    }
+
+
+    public function sendChat(Request $request)
+    {
+        Chat::create([
+            'user_id' => $request->user_id,
+            'friend_id' => $request->friend_id,
+            'chat' => $request->chat,
+        ]);
+
+
+        return [];
     }
 }
