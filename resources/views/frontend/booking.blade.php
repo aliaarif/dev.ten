@@ -133,7 +133,7 @@
 								<div class="brnad-name">Address: <span>{{ $vendor->address }}</span></div>
 							</div>
 							<div class="col-lg-6 col-md-6">
-								<div class="brnad-name">Rate: <span align="left"><b class="base-pric" style="position: relative; top: 2px;">${{ $vendor->rate }}/HOUR</b></span></div>
+								<div class="brnad-name">Rate: <span align="left"><b class="base-pric" style="position: relative; top: 2px;">${{ $vendor->rate + config('app.tax', 10) }} /HOUR</b></span></div>
 							</div>
 
 							<div class="col-lg-12 col-md-12">

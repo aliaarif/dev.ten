@@ -57,6 +57,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'tax' => env('APP_TAX', 10),
+
     'asset_url' => env('ASSET_URL', null),
 
     /*

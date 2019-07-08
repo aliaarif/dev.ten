@@ -22,7 +22,7 @@ class BookingController extends Controller
         //dd($vendor);
         $sub_total = round($request->hours * $vendor->rate);
         $tax = config('app.tax', 10);
-        $total_amount = ($sub_total + $tax) * 100;
+        $total_amount = ($sub_total + $tax);
         $description = Auth::user()->name .' hire '.$request->vendor_name.' for 1  day';
         $b_dates = "['$request->booking_date', '$request->booking_date']";
 
