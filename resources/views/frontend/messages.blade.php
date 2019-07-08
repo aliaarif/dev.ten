@@ -16,7 +16,7 @@
 	</div>
 
 </section>
-<section class="w-100 p-tb-70" id="app">
+<section class="w-100 p-tb-70">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">

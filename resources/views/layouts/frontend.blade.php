@@ -42,7 +42,7 @@
   <meta name="title" content="{{ config('app.name', 'Laravel') }}  {{ '| '.$pageTitle }}">
   <title>{{ config('app.name', 'Laravel') }}  {{ '| '.$pageTitle }}</title>
   <style>
-    #app {
+    #header {
       height: 100%;
     }
 
@@ -68,20 +68,20 @@
   </style>
 </head>
 <body>
-<div id="wrapper">
-  <header class="header" >
+  <div id="wrapper">
+    <header class="header" >
 
-    <nav id="nav" class="navbar navbar-light navbar-expand-lg mainmenu">
-      <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-          <img src="{{  asset('frontAssets/images/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}">
-        </a>
+      <nav id="nav" class="navbar navbar-light navbar-expand-lg mainmenu">
+        <div class="container">
+          <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{  asset('frontAssets/images/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}">
+          </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
 
 
       <!--       <li class="@if(Request::segment(1) == null) active @endif"><a href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a></li>
@@ -183,22 +183,22 @@
 
     <a href="#" id="scroll" style="display: none;"><span></span></a>
 
-    </div>
-    <!-- <script src="{{ asset('js/app.js') }}"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="{{ asset('frontAssets/js/lightbox-plus-jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('frontAssets/js/portfolio.js') }}"></script>
-    <script src="{{ asset('frontAssets/js/owl.carousel.min.js') }}"></script>
+  </div>
+  <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="{{ asset('frontAssets/js/lightbox-plus-jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('frontAssets/js/portfolio.js') }}"></script>
+  <script src="{{ asset('frontAssets/js/owl.carousel.min.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('frontAssets/js/custom.js') }}"></script>
-    
-    <!-- <script type="text/javascript" src="{{ asset('frontAssets/js/login-form.js') }}"></script> -->
-    @stack('js')
-  </body>
-  </html>
-  <!--End Here footer Area-->
+  <script type="text/javascript" src="{{ asset('frontAssets/js/custom.js') }}"></script>
+  
+  <!-- <script type="text/javascript" src="{{ asset('frontAssets/js/login-form.js') }}"></script> -->
+  @stack('js')
+</body>
+</html>
+<!--End Here footer Area-->
 
 
 

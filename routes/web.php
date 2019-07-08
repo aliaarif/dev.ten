@@ -1,73 +1,4 @@
 <?php
-Route::get('test', function(){
-
-	// function abc($a){
-
-	// 	return $a + 2;
-	// 	return $a;
-	// }
-
-
-
-
-
-
-
-});
-
-use App\Events\MessageSent;
-//use Mail;
-
-Route::get('sendemail', function () {
-	
-    $data = array(
-        'name' => "Learning Laravel",
-    );
-
-    Mail::send('emails.leads.welcome', $data, function ($message) {
-
-        $message->from('ali.aliaarif@gmail.com', 'Learning Laravel');
-
-        $message->to('ali.aliaarif@gmail.com')->subject('Learning Laravel test email');
-
-    });
-
-    return "Your email has been sent successfully";
-
-});
-
-
-
-
-// Route::get('test', function(){
-// 	class B  {
-// 		public $b = 'B';
-// 	}
-	
-// 	class C extends B {
-
-// 		public $c = 'C';
-// 	}
-	
-// 	class A extends C {
-// 		public $a = 'A';
-// 	}
-	
-// 	$a = new A;
-
-// 	dd($a);
-
-// });
-
-
-Route::get('messages', function(){
-
-	return view('chatMessages', [
-		'pageTitle' => 'Chat Messages'
-	]);
-});
-// =======================Chat Route========================
-
 Route::get('/users/{user}/messages', function ($user) {
 	dd($user);
 	if (!request()->wantsJson()) {
@@ -77,9 +8,7 @@ Route::get('/users/{user}/messages', function ($user) {
 	$cnId = array($user, Auth::id());
 	sort($cnId);
 	$chat_id = $cnId[0].'_'.$cnId[1];
-
 	//dd($chat_id);
-
 	$messages = App\ChatMessage::where('chat_id', $user)->orderBy('created_at','asc')->get()->groupBy(function($item){
 		return $item->created_at->format('d-M-y');
 	});
@@ -104,19 +33,18 @@ Route::post('/users/{user}/messages', function ($user) {
 		'chat_id' => $user,
 	]);
 
-	App\ChatConversation::updateOrCreate(
-		['chat_id'=>$user],
-		['message'=>request('message')]
-	);
 	event(new MessageSent($user, $message));
 	return $message;
 });
-
-
 Route::post('/read/{user}/messages', 'MessageController@readMessages');
+Route::get('messages1', 'MessageController@index')->name('chatMessages');
 
 
-Route::get('/settings/chat-messages', 'MessageController@index')->name('settings.chatMessages');
+
+
+
+
+
 
 
 
@@ -181,7 +109,9 @@ Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCa
 Auth::routes(['verify' => true]);
 
 
-
+// Route::post('broadcasting/auth', function(){
+// 	return true;
+// });
 
 
 Route::get('get/user_types', 'SearchController@getUserTypes')->name('get.user_types');
