@@ -428,6 +428,7 @@
 			source:  function (query, process) {
 
 				return $.get(path1, { query: query }, function (data) {
+					console.log(daat);
 
 					return process(data);
 

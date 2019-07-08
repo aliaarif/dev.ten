@@ -32,9 +32,20 @@
         props: ['chats', 'userid', 'friendid'],
        data(){
            return {
-               chat: ''
+               chat: '',
            }
        },
+        created(){
+            //document.getElementById('chats').scrollHeight = 200;
+        //     var height=document.querySelector('.chats').scrollHeight;
+
+
+        
+        // document.querySelector('.chats').scrollTop = height;
+        // document.querySelector('.chats').scrollTop = height + 50;
+        // console.log(height + 50);
+        },
+    
        methods: {
            sendChat: function(e){
                if(this.chat != ''){
@@ -48,10 +59,44 @@
 
                    axios.post('/chats/send-chat', data)
                    .then((res) => {
-                       this.chats.push(data);
+
+
+var height=document.querySelector('.chats').scrollHeight;
+            document.querySelector('.chats').scrollTop = height;
+            document.querySelector('.chats').scrollTop = height + 50;
+            
+                    this.chats.push(data);
+
+                    // let container = document.querySelector('.chats');
+                    // if(container.scrollHeight != null){
+                    // let scrollHeight = container.scrollHeight;
+                    // console.log(scrollHeight);
+                    // container.scrollTop = scrollHeight + 50;
+                    // }
+
+
+
+            
+
+
+                    
+
+                       
+                       
                    });
                }
-           }
+           },
+
+
+          
+            scrollToEnd: function(){
+                var container = document.querySelector('.chats');
+                var scrollHeight = container.scrollHeight();
+                container.scrollTop = scrollHeight;
+            },
+        
+
+
        },
        
     }

@@ -9,7 +9,7 @@
         box-shadow: inset 0 0 20px 0 grey;
         margin-bottom:10px;
         border: 1px solid grey;
-        max-height: 600px;
+        max-height: 200px;
         overflow-x: auto
     }
 
@@ -39,7 +39,7 @@
 
 <template>
     <div class="panel-block">
-        <div class="chats" v-if="chats.length != 0">
+        <div class="chats" v-if="chats.length != 0" v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}">
             <div  v-for="chat in chats" v-bind:key="chat.id" style="overflow:auto">
                 <div class="chats-right" v-if="chat.user_id == userid" >
                     {{ chat.chat }}
@@ -60,8 +60,17 @@
 </template>
 
 <script>
+    import VueChatScroll from 'vue-chat-scroll';
+    Vue.use(VueChatScroll);
+
     export default {
+
+
         props: ['chats', 'userid', 'friendid'],
+         
+         created(){
+
+         },
        
     }
 </script>

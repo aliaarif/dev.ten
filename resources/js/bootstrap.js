@@ -1,18 +1,7 @@
-
-
-import axios from 'axios';
-import Vue from 'vue';
-import io from 'socket.io-client';
-
-window.axios = axios;
-window.Vue = Vue;
-window.io = io;
-
-const instance = axios.create({
-	baseURL: 'http://dev.ten/'
-});
-
 window._ = require('lodash');
+window.axios = require('axios');
+
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
@@ -23,7 +12,7 @@ if (token) {
 }
 
 
-import Echo from 'laravel-echo'
+import Echo from 'laravel-echo';
 
 window.Pusher = require('pusher-js');
 

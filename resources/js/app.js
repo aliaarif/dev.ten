@@ -1,7 +1,5 @@
 import './bootstrap';
 window.Vue = require('vue');
-
-
 Vue.config.productionTip = false;
 Vue.component('chats', require('./components/Chats.vue').default);
 Vue.component('chat-composer', require('./components/ChatComposer.vue').default);
@@ -26,16 +24,13 @@ const app = new Vue({
     data: {
         chats: '',
         onlineUsers: '',
+        
     },
-    methods: {
-        scrollToEnd: function(){
-            var container = document.querySelector('.chats');
-            var scrollHeight = container.scrollHeight();
-            container.scrollTop = scrollHeight;
-        }
-    },
+   
     created(){
-        //this.scrollToEnd();
+
+
+        
 
         const userId = $('meta[name="userId"]').attr('content');
         const friendId = $('meta[name="friendId"]').attr('content');
@@ -51,7 +46,7 @@ const app = new Vue({
             .listen('BroadcastChat', (e) => {
                 document.getElementById('chatAudio').play();
                 this.chats.push(e.chat);
-                this.scrollToEnd();
+                
 
             });
         }

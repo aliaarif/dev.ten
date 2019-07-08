@@ -1,43 +1,43 @@
 <?php
-Route::get('/users/{user}/messages', function ($user) {
-	dd($user);
-	if (!request()->wantsJson()) {
-		abort(404);
-	}
+// Route::get('/users/{user}/messages', function ($user) {
+// 	dd($user);
+// 	if (!request()->wantsJson()) {
+// 		abort(404);
+// 	}
 
-	$cnId = array($user, Auth::id());
-	sort($cnId);
-	$chat_id = $cnId[0].'_'.$cnId[1];
-	//dd($chat_id);
-	$messages = App\ChatMessage::where('chat_id', $user)->orderBy('created_at','asc')->get()->groupBy(function($item){
-		return $item->created_at->format('d-M-y');
-	});
-	$messages = collect($messages)->put('Today',[ ]);
-	//dd($messages);
-	return $messages;
-});
+// 	$cnId = array($user, Auth::id());
+// 	sort($cnId);
+// 	$chat_id = $cnId[0].'_'.$cnId[1];
+// 	//dd($chat_id);
+// 	$messages = App\ChatMessage::where('chat_id', $user)->orderBy('created_at','asc')->get()->groupBy(function($item){
+// 		return $item->created_at->format('d-M-y');
+// 	});
+// 	$messages = collect($messages)->put('Today',[ ]);
+// 	//dd($messages);
+// 	return $messages;
+// });
 
-Route::post('/users/{user}/messages', function ($user) {
-	$r = explode('_', $user);
+// Route::post('/users/{user}/messages', function ($user) {
+// 	$r = explode('_', $user);
 
-	$pos = array_search(request('username'), $r);
+// 	$pos = array_search(request('username'), $r);
 
-	unset($r[$pos]);
+// 	unset($r[$pos]);
 
-	$rv = implode(" ", $r);
+// 	$rv = implode(" ", $r);
 
-	$message = App\ChatMessage::forceCreate([
-		'receiver' => $rv,
-		'sender' => request('username'),
-		'message' => request('message'),
-		'chat_id' => $user,
-	]);
+// 	$message = App\ChatMessage::forceCreate([
+// 		'receiver' => $rv,
+// 		'sender' => request('username'),
+// 		'message' => request('message'),
+// 		'chat_id' => $user,
+// 	]);
 
-	event(new MessageSent($user, $message));
-	return $message;
-});
-Route::post('/read/{user}/messages', 'MessageController@readMessages');
-Route::get('messages1', 'MessageController@index')->name('chatMessages');
+// 	event(new MessageSent($user, $message));
+// 	return $message;
+// });
+// Route::post('/read/{user}/messages', 'MessageController@readMessages');
+// Route::get('messages1', 'MessageController@index')->name('chatMessages');
 
 
 
