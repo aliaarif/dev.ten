@@ -63,10 +63,7 @@
 						<tr>
 							<td>
 								
-								You have booked <span><strong>{{ $vendor->name }} ( {{ ucwords(str_replace('-', ' ', $vendor->user_type)) }} )</strong></span>  
-								for 
-								<span><strong>{{ \Carbon\Carbon::parse($myInvoice->booking_from_date)->format('M d Y') }}</strong></span>  to 
-								<span><strong>{{ \Carbon\Carbon::parse($myInvoice->booking_to_date)->format('M d Y') }}</strong></span> 
+							<span><strong>{{ $vendor->name }} ( {{ ucwords(str_replace('-', ' ', $vendor->user_type)) }} ) - {{ \Carbon\Carbon::parse($myInvoice->booking_from_date)->format('M d Y') }} ( for {{ $myInvoice->hours }} hour(s) )</strong></span>
 
 							</td>
 
