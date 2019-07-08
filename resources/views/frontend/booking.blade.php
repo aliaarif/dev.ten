@@ -368,7 +368,7 @@
 
 		<!-- Modal -->
 		<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-md"+ role="document">
+			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="bookingModalLabel">Pay with Stripe to Book {{ $vendor->name }}</h5>
@@ -391,7 +391,7 @@
 									<input class="calendar" type="text"style="width: 100%; border: 1; outline: 0; text-align: left" placeholder="Choose a to date" name="booking_to_date" id="text-calendar2">
 								</span> -->
 								<span  style="float:left; width: 20%;">
-									<input  type="number"style="width: 100%; border: 1; outline: 0; text-align: center" placeholder="Hours" name="hours" id="hours" value="1" min="1" max="24">
+									<input  type="number"style="width: 100%; border: 1; outline: 0; text-align: center" placeholder="Hours" name="hours" id="hours" value="2" min="1" max="10">
 								</span>
 								<!-- <span id="btnBookingSlots" style="float:right; font-size: 30px; width: 5%; cursor: pointer;">+</span> -->
 							</div>
@@ -415,7 +415,8 @@
 						<!-- Used to display form errors. -->
 						<div id="card-errors" role="alert"></div>
 
-						<input type="hidden" name="token" value="{{ Request::segment(2) }}">
+						<input type="hidden" name="vendor_token" value="{{ Request::segment(2) }}">
+						<input type="hidden" name="user_token" value="{{ Auth::user()->remember_token }}">
 						<input type="hidden" name="vendor_id" value="{{ $vendor->id }}">
 						<input type="hidden" name="vendor_name" value="{{ $vendor->name }}">
 
@@ -457,11 +458,11 @@
 	@endpush
 
 	@push('js')
-	<script type="text/javascript" src="{{ asset('3rdparty//js/pignose.calendar.full.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('3rdparty/js/pignose.calendar.full.min.js') }}"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 	<script type="text/javascript">
-		$(function () {
+		$(() => {
 
 
 
@@ -549,24 +550,7 @@
 			});	
 
 			
-
-
-
-		});
-
-
-		function validateSearchForm(){
-			event.preventDefault();
-			var type1 = document.getElementById('user_type');
-			var location1 = document.getElementById('user_location');
-			var form = document.getElementById('searchFrom');
-			if(type1.value == ''){
-				type1.focus();
-			}else{
-				form.submit();
-			}
-		}
-		var path1 = "{{ route('get.user_types') }}";
+			var path1 = "{{ route('get.user_types') }}";
 		$('input.typeahead1').typeahead({
 			source:  function (query, process) {
 
@@ -584,6 +568,23 @@
 				});
 			}
 		});
+
+
+		});
+
+
+		function validateSearchForm(){
+			event.preventDefault();
+			var type1 = document.getElementById('user_type');
+			var location1 = document.getElementById('user_location');
+			var form = document.getElementById('searchFrom');
+			if(type1.value == ''){
+				type1.focus();
+			}else{
+				form.submit();
+			}
+		}
+		
 		var stripe = Stripe('pk_test_k1YJeZ7GK3nItqh7iaLHRek5');
 		var elements = stripe.elements();
 		var style = {

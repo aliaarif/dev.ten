@@ -18,16 +18,13 @@ class SearchController extends Controller
 	{
 
 		$uT = [];
-		// $j=[];
+		
+		//$userTypes = User::select('user_type', DB::raw('count(*) as total'))->where("user_type","LIKE","%{$request->input('query')}%")->where('user_role', '!=', 'admin')->where('user_role', '!=', 'user')->groupBy('user_type')->get(['total', 'user_type']);
+		$userTypes = User::select('user_type', DB::raw('count(*) as total'))->where("user_type", "LIKE", "%{$request->input('query')}%")->whereNotIn('user_role', ['admin', 'user'])->groupBy('user_type')->get(['total', 'user_type']);
 
-		$userTypes = User::select('user_type', DB::raw('count(*) as total'))->where("user_type","LIKE","%{$request->input('query')}%")->where('user_role', '!=', 'Admin')->where('user_role', '!=', 'User')->groupBy('user_type')->get(['total', 'user_type']);
+		//return response()->json($userTypes);
 
-		//return $userTypes;
-
-		// $userTypes = User::where("user_type","LIKE","%{$request->input('query')}%")->where('user_role', '!=', 'Admin')->where('user_role', '!=', 'User')->groupBy('user_type')->pluck('user_type');
-
-
-		foreach ($userTypes as $key => $value) {
+		foreach ($userTypes as  $value) {
 
 
 			$user_type = ucwords(str_replace('-', ' ', $value['user_type']));
@@ -80,8 +77,6 @@ class SearchController extends Controller
 		return redirect()->route('get.search.result', ['type' => $type, 'location' => $location ]);
 
 	}
-
-
 
 	public function getSearchResults($type = null, $location = null){
 
@@ -150,7 +145,10 @@ class SearchController extends Controller
 
 	public function showOtherProfile($token)
 	{
+
 		$otherProfile = User::where('remember_token', $token)->first();
+
+		//dd($otherProfile);
 
 		$data = [
 			'pageTitle' => 'Show Profile',

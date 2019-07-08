@@ -12,16 +12,16 @@ class NewBooking extends Mailable
     use Queueable, SerializesModels;
 
     public $data;
-    public $token;
+    public $user_token;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data, $token)
+    public function __construct($data, $user_token)
     {
         $this->data = $data;
-        $this->token = $token;
+        $this->user_token = $user_token;
     }
 
     /**

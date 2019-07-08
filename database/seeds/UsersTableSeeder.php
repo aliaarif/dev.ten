@@ -36,6 +36,7 @@ class UsersTableSeeder extends Seeder
     $user_role = 'vendor';
     VendorType::truncate();
     VendorType::create(['name' => 'photographer']);
+    VendorType::create(['name' => 'caters']);
     VendorType::create(['name' => 'videographer']);
     VendorType::create(['name' => 'dj']);
     VendorType::create(['name' => 'photo-video-stand']);

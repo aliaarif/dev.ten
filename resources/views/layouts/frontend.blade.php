@@ -191,7 +191,7 @@
   <script src="{{ asset('frontAssets/js/lightbox-plus-jquery.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('frontAssets/js/portfolio.js') }}"></script>
   <script src="{{ asset('frontAssets/js/owl.carousel.min.js') }}"></script>
-
+  <!-- <script src="{{ asset('frontAssets/js/bootstrap3-typeahead.min.js') }}"></script> -->
   <script type="text/javascript" src="{{ asset('frontAssets/js/custom.js') }}"></script>
   
   <!-- <script type="text/javascript" src="{{ asset('frontAssets/js/login-form.js') }}"></script> -->

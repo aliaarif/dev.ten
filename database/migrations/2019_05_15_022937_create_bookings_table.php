@@ -13,7 +13,6 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('client_id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('vendor_id');
             $table->text('booking_dates');
             $table->date('booking_from_date');
             $table->date('booking_to_date');

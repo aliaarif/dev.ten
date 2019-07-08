@@ -4,7 +4,7 @@
 
 
 
-@component('mail::button', ['url' => 'http://dev.ton-events/show/profile/'.$data['token']])
+@component('mail::button', ['url' => 'http://dev.ten/show/profile/'.$user_token])
 Show User Profile
 @endcomponent
 

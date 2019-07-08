@@ -440,7 +440,8 @@ function validateSearchForm(){
 	}
 }
 
-
+$(() => {
+	
 $('input.typeahead1').on('change', function(){
 	var myStr = $(this).val();
 	var strArray = myStr.split("-");
@@ -473,6 +474,8 @@ $('input.typeahead2').typeahead({
 
 $('#range').on('change', function(){
 	$('#output-2').html($('#output').html());
+});
+
 });
 
 </script>

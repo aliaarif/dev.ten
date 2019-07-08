@@ -1874,12 +1874,6 @@ __webpack_require__.r(__webpack_exports__);
       chat: ''
     };
   },
-  created: function created() {//document.getElementById('chats').scrollHeight = 200;
-    //     var height=document.querySelector('.chats').scrollHeight;
-    // document.querySelector('.chats').scrollTop = height;
-    // document.querySelector('.chats').scrollTop = height + 50;
-    // console.log(height + 50);
-  },
   methods: {
     sendChat: function sendChat(e) {
       var _this = this;
@@ -1893,8 +1887,7 @@ __webpack_require__.r(__webpack_exports__);
         this.chat = '';
         axios.post('/chats/send-chat', data).then(function (res) {
           var height = document.querySelector('.chats').scrollHeight;
-          document.querySelector('.chats').scrollTop = height;
-          document.querySelector('.chats').scrollTop = height + 50;
+          document.querySelector('.chats').scrollTop = height; //document.querySelector('.chats').scrollTop = height + 50;
 
           _this.chats.push(data); // let container = document.querySelector('.chats');
           // if(container.scrollHeight != null){
@@ -1905,12 +1898,12 @@ __webpack_require__.r(__webpack_exports__);
 
         });
       }
-    },
-    scrollToEnd: function scrollToEnd() {
-      var container = document.querySelector('.chats');
-      var scrollHeight = container.scrollHeight();
-      container.scrollTop = scrollHeight;
-    }
+    } // scrollToEnd: function(){
+    //     var container = document.querySelector('.chats');
+    //     var scrollHeight = container.scrollHeight;
+    //     container.scrollTop = scrollHeight;
+    // },
+
   }
 });
 

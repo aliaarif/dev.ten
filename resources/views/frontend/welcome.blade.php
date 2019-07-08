@@ -398,10 +398,12 @@
 	<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
 
-
-
 	<script src="{{ asset('frontAssets/js/bootstrap3-typeahead.min.js') }}"></script>
 	<script>
+
+
+
+
 
 		function validateSearchForm(){
 			event.preventDefault();
@@ -416,6 +418,7 @@
 		}
 
 
+		$(() => {
 		$('input.typeahead1').on('change', function(){
 			var myStr = $(this).val();
 			var strArray = myStr.split("-");
@@ -424,11 +427,12 @@
 
 
 		var path1 = "{{ route('get.user_types') }}";
+
 		$('input.typeahead1').typeahead({
 			source:  function (query, process) {
 
 				return $.get(path1, { query: query }, function (data) {
-					console.log(daat);
+					console.log(data);
 
 					return process(data);
 
@@ -447,7 +451,7 @@
 
 
 
-
+});
 
 
 	</script>
